@@ -33,10 +33,12 @@ export default function CreateBlog() {
   }
   return (
     <section className="max-w-[1320px] mt-16 py-[50px] mx-auto">
+      <h2 className='text-center text-4xl font-bold'>Create Blog</h2>
       <form onSubmit={saveBlog} className="w-full">
         <label className="text-[20px] font-semibold">Heading</label>
         <div className="relative mt-4">
           <input
+          required
             name="heading"
             value={formData.heading}
             onChange={handleFormData}
@@ -54,13 +56,14 @@ export default function CreateBlog() {
         <div className="mt-10">
           <label className="text-[20px] font-semibold">Description</label>
           <textarea
+          required
             name="description"
             value={formData.description}
             onChange={handleFormData}
             id="message"
             rows="14"
             className="block mt-4 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Write your thoughts here..."
+            placeholder="Write your Blog here..."
           />
         </div>
         <button

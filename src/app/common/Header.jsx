@@ -1,6 +1,12 @@
+"use client"
 import Link from 'next/link'
+import { useContext } from 'react';
+import { loginContext } from '../MainContext';
 
 export default function Header() {
+  let {token,setToken}=useContext(loginContext)
+  // console.log(token)
+  
   return (
     <header>
       <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
@@ -17,18 +23,35 @@ export default function Header() {
           </a>
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <div>
+              <Link href={"/create"}>
               <button className="relative  sm:inline-flex hidden items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
                 <span className="relative px-4 py-1.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                   Create Blog
                 </span>
               </button>
-              <button
+              </Link>
+              {
+                token!==undefined && token!=="" ?
+                
+                <button
+                onClick={()=>setToken("")}
                 type="button"
                 className=
                 "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
-                Log In
+                Log Out
               </button>
+              :
+              <Link href={"/login"}>
+                <button
+                  type="button"
+                  className=
+                  "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Log In
+                </button>
+                </Link>
+              }
             </div>
             <button
               data-collapse-toggle="navbar-sticky"
