@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { getDatabase, ref, set } from "firebase/database";   // ! Step 2
 import { app } from '@/FirebaseConfig';     
+import CheckLogin from '../Auth/CheckLogin';
 export default function CreateBlog() {
   const db = getDatabase(app);             // ! Step 3
   let [formData,setFormData]=useState({
@@ -32,6 +33,8 @@ export default function CreateBlog() {
     event.preventDefault()
   }
   return (
+    <>
+       <CheckLogin/>
     <section className="max-w-[1320px] mt-16 py-[50px] mx-auto">
       <h2 className='text-center text-4xl font-bold'>Create Blog</h2>
       <form onSubmit={saveBlog} className="w-full">
@@ -74,5 +77,6 @@ export default function CreateBlog() {
         </button>
       </form>
     </section>
+    </>
   );
 }

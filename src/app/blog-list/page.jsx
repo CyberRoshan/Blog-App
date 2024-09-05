@@ -1,9 +1,11 @@
 import React from 'react'
+import CheckLogin from '../Auth/CheckLogin'
 
 export default function BlogList() {
   return (
+    <>
+    <CheckLogin/>
     <section className='max-w-[1320px] mx-auto mt-16 py-[50px]'>
-        
 
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
 <h2 className='text-center text-4xl font-bold mb-5'>Blog List</h2>
@@ -61,5 +63,6 @@ export default function BlogList() {
 </div>
 
     </section>
+    </>
   )
 }
