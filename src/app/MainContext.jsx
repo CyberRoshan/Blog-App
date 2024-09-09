@@ -2,8 +2,8 @@
 import React, { createContext, useEffect, useState } from 'react'
 import Header from './common/Header'
 import Footer from './common/Footer'
-import { useRouter } from 'next/router'
 import { usePathname } from 'next/navigation'
+import { ThemeProvider } from 'next-themes'
 
 export const loginContext=createContext()
 

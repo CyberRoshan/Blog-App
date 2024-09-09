@@ -3,6 +3,7 @@ import { app } from "@/FirebaseConfig";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { useEffect, useState } from "react";
 export default function Home() {
+
   let [finalBlogs,setFinalBlogs]=useState([])
   // console.log(finalBlogs);
   

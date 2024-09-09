@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "firebase": "^10.13.1",
+    "flowbite-react": "^0.10.1",
     "next": "14.2.7",
+    "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
     "react-router-dom": "^6.26.1"
